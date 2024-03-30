@@ -5,12 +5,14 @@ const JUMP_VELOCITY = -500.0
 
 @onready var textbox = $Textbox
 @onready var sword = $"../Sword"
-
+@onready var lives_text = $LivesText
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var can_move = true
 var sword_offset = Vector2(-30, -10)  # Offset for positioning the sword below the player
 var respawn_position = Vector2.ZERO
+
+var lives = 3
 
 var picked_sword = false
 
@@ -25,6 +27,7 @@ var textbox_visible = false
 var direction = 0  # Define direction as a class member variable
 
 func _physics_process(delta):
+	lives_text.text = "Lives: " + str(lives)
 	
 	if get_slide_collision(0):
 		if get_slide_collision(0).get_collider().name == "obstacles":
@@ -95,4 +98,11 @@ func set_respawn_position(pos: Vector2):
 
 # Example of how to respawn the player
 func respawn_player():
+	lives = 3
 	global_position = respawn_position
+	
+func take_damage():
+	
+	lives = lives - 1
+	if lives == 0:
+		respawn_player()

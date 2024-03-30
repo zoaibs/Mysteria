@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bdeudnqonw7x4"]
+[gd_scene load_steps=19 format=3 uid="uid://bdeudnqonw7x4"]
 
 [ext_resource type="Script" path="res://Player1.gd" id="1_po0o6"]
 [ext_resource type="Texture2D" uid="uid://b10t31dhcn7yn" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Idle_1.png" id="1_r0ijj"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://btjq5e8oo1obl" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Walk_2.png" id="6_mtmgm"]
 [ext_resource type="Texture2D" uid="uid://c435p3vpmusm5" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Walk_3.png" id="7_543so"]
 [ext_resource type="Texture2D" uid="uid://bd74sqtmmea58" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Walk_4.png" id="8_wattg"]
+[ext_resource type="FontFile" uid="uid://cxhawnnon7lsg" path="res://Alkhemikal.ttf" id="10_i8ab6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_24c5q"]
 radius = 19.0
@@ -223,5 +224,14 @@ libraries = {
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="LivesText" type="RichTextLabel" parent="."]
+offset_left = -575.0
+offset_top = -348.0
+offset_right = -335.0
+offset_bottom = -270.0
+theme_override_fonts/normal_font = ExtResource("10_i8ab6")
+theme_override_font_sizes/normal_font_size = 64
+text = "Lives: 3"
 
 [connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
