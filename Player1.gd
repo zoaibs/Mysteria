@@ -11,7 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var can_move = true
 var sword_offset = Vector2(-30, -10)  # Offset for positioning the sword below the player
 var respawn_position = Vector2.ZERO
-
+var is_climbing = false
 var lives = 3
 
 var picked_sword = false
@@ -27,13 +27,25 @@ var textbox_visible = false
 var direction = 0  # Define direction as a class member variable
 
 func _physics_process(delta):
+	
 	lives_text.text = "Lives: " + str(lives)
 	
 	if get_slide_collision(0):
 		if get_slide_collision(0).get_collider().name == "obstacles":
 			#player die lmao
-			
 			respawn_player()
+		elif get_slide_collision(0).get_collider().name == "ladders":
+			if Input.is_action_just_pressed("climb"):
+				is_climbing = true
+				print("climbing!")
+				velocity.y = -150
+			if Input.is_action_just_released("climb"):
+				print("no longer climbing")
+				is_climbing = false
+				velocity.y = 0
+	else:
+		is_climbing = false
+
 	
 	
 	if(textbox_visible):
@@ -42,7 +54,8 @@ func _physics_process(delta):
 		textbox.hide()
 	
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() and !is_climbing:
+		print(is_climbing)
 		velocity.y += gravity * delta
 	
 	if is_on_floor() and can_jump == false:

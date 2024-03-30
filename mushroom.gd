@@ -20,7 +20,7 @@ func _physics_process(delta):
 	if check:
 		if check.name == "SwordArea":
 			if check.get_parent().is_attack():
-				self.get_parent().queue_free()
+				get_parent().remove_child(self)
 		
 
 
