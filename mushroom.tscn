@@ -1,33 +1,32 @@
-[gd_scene load_steps=18 format=3 uid="uid://bdeudnqonw7x4"]
+[gd_scene load_steps=17 format=3 uid="uid://chlgaovsd0hvn"]
 
-[ext_resource type="Script" path="res://Player1.gd" id="1_po0o6"]
-[ext_resource type="Texture2D" uid="uid://b10t31dhcn7yn" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Idle_1.png" id="1_r0ijj"]
-[ext_resource type="Texture2D" uid="uid://cxe7y1mp8hyyd" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Idle_2.png" id="2_klqc4"]
-[ext_resource type="Texture2D" uid="uid://457d2ryh0146" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Idle_3.png" id="3_ybiio"]
-[ext_resource type="Texture2D" uid="uid://b81pvsvdogeec" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Idle_4.png" id="4_ja6n7"]
-[ext_resource type="Texture2D" uid="uid://deeppc3abgxwf" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Walk_1.png" id="5_2q0xt"]
-[ext_resource type="Texture2D" uid="uid://btjq5e8oo1obl" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Walk_2.png" id="6_mtmgm"]
-[ext_resource type="Texture2D" uid="uid://c435p3vpmusm5" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Walk_3.png" id="7_543so"]
-[ext_resource type="Texture2D" uid="uid://bd74sqtmmea58" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Walk_4.png" id="8_wattg"]
+[ext_resource type="Texture2D" uid="uid://doxdjv7n2wx2n" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Mushroom - Small/SmallMushroom_Idle_1.png" id="1_6gowj"]
+[ext_resource type="Texture2D" uid="uid://dtqu7ea8t8ylv" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Mushroom - Small/SmallMushroom_Idle_2.png" id="2_h74xq"]
+[ext_resource type="Texture2D" uid="uid://cowdfbgnayutj" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Mushroom - Small/SmallMushroom_Idle_3.png" id="3_d72ns"]
+[ext_resource type="Texture2D" uid="uid://c24mtiarqp3hq" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Mushroom - Small/SmallMushroom_Idle_4.png" id="4_hqkbj"]
+[ext_resource type="Texture2D" uid="uid://ddtnrjnjylqdn" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Mushroom - Small/SmallMushroom_Walk_1.png" id="5_cx3qu"]
+[ext_resource type="Texture2D" uid="uid://cbyp5mffknfc3" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Mushroom - Small/SmallMushroom_Walk_2.png" id="6_yduf4"]
+[ext_resource type="Texture2D" uid="uid://cl28ydu34xdof" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Mushroom - Small/SmallMushroom_Walk_3.png" id="7_fg1nj"]
+[ext_resource type="Texture2D" uid="uid://dfxnlrogab6op" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Mushroom - Small/SmallMushroom_Walk_4.png" id="8_yrh4e"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_24c5q"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6drwe"]
 radius = 19.0
-height = 64.0
+height = 56.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hjadv"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ohjw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_r0ijj")
+"texture": ExtResource("1_6gowj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_klqc4")
+"texture": ExtResource("2_h74xq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ybiio")
+"texture": ExtResource("3_d72ns")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_ja6n7")
+"texture": ExtResource("4_hqkbj")
 }],
 "loop": true,
 "name": &"idle",
@@ -35,27 +34,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_ja6n7")
+"texture": ExtResource("5_cx3qu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_r0ijj")
-}],
-"loop": true,
-"name": &"jump",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_2q0xt")
+"texture": ExtResource("6_yduf4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_mtmgm")
+"texture": ExtResource("7_fg1nj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_543so")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_wattg")
+"texture": ExtResource("8_yrh4e")
 }],
 "loop": true,
 "name": &"walk",
@@ -199,19 +187,16 @@ _data = {
 "walk": SubResource("Animation_fm6vp")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
-script = ExtResource("1_po0o6")
-
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Mushroom" type="CharacterBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
-shape = SubResource("CapsuleShape2D_24c5q")
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_6drwe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -30)
 scale = Vector2(4, 4)
-sprite_frames = SubResource("SpriteFrames_hjadv")
+sprite_frames = SubResource("SpriteFrames_1ohjw")
 animation = &"idle"
 frame = 1
 
@@ -220,8 +205,3 @@ autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_1m8rj")
 }
-
-[node name="CoyoteTimer" type="Timer" parent="."]
-one_shot = true
-
-[connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cixobghs4jhvq"]
+[gd_scene load_steps=5 format=3 uid="uid://c3x6jpenqmiq7"]
 
-[ext_resource type="Texture2D" uid="uid://b72ijkf6nrkyl" path="res://cavesofgallet_tiles.png" id="1_b3qnc"]
+[ext_resource type="Texture2D" uid="uid://b72ijkf6nrkyl" path="res://cavesofgallet_tiles.png" id="1_jl52y"]
+[ext_resource type="Script" path="res://obstacles.gd" id="2_xu05i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2mmku"]
-texture = ExtResource("1_b3qnc")
+texture = ExtResource("1_jl52y")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -445,8 +446,9 @@ tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_2mmku")
 
-[node name="tilemap" type="TileMap"]
+[node name="obstacles" type="TileMap" groups=["obstacles"]]
 texture_filter = 1
 scale = Vector2(6, 6)
 tile_set = SubResource("TileSet_bgysw")
 format = 2
+script = ExtResource("2_xu05i")

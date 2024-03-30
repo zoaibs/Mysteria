@@ -67,7 +67,7 @@ func show_textbox():
 	textbox_container.show()
 
 func display_text():
-	print("displaying text")
+	#print("displaying text")
 	var next_text = text_queue.pop_front()
 	label.text = next_text
 	label.visible_ratio = 0.0

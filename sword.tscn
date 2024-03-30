@@ -1,66 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://bdeudnqonw7x4"]
+[gd_scene load_steps=14 format=3 uid="uid://cdokwk2w04udu"]
 
-[ext_resource type="Script" path="res://Player1.gd" id="1_po0o6"]
-[ext_resource type="Texture2D" uid="uid://b10t31dhcn7yn" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Idle_1.png" id="1_r0ijj"]
-[ext_resource type="Texture2D" uid="uid://cxe7y1mp8hyyd" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Idle_2.png" id="2_klqc4"]
-[ext_resource type="Texture2D" uid="uid://457d2ryh0146" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Idle_3.png" id="3_ybiio"]
-[ext_resource type="Texture2D" uid="uid://b81pvsvdogeec" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Idle_4.png" id="4_ja6n7"]
-[ext_resource type="Texture2D" uid="uid://deeppc3abgxwf" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Walk_1.png" id="5_2q0xt"]
-[ext_resource type="Texture2D" uid="uid://btjq5e8oo1obl" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Walk_2.png" id="6_mtmgm"]
-[ext_resource type="Texture2D" uid="uid://c435p3vpmusm5" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Walk_3.png" id="7_543so"]
-[ext_resource type="Texture2D" uid="uid://bd74sqtmmea58" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Walk_4.png" id="8_wattg"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_24c5q"]
-radius = 19.0
-height = 64.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_hjadv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_r0ijj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_klqc4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_ybiio")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_ja6n7")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_ja6n7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_r0ijj")
-}],
-"loop": true,
-"name": &"jump",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_2q0xt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_mtmgm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_543so")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_wattg")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 5.0
-}]
+[ext_resource type="Script" path="res://Sword.gd" id="1_ka32t"]
+[ext_resource type="Texture2D" uid="uid://b6isidtsqc2vg" path="res://sword_cut_frames/frame_2_delay-0.1s.png" id="4_33udi"]
+[ext_resource type="Texture2D" uid="uid://d24xjbughip75" path="res://sword_cut_frames/frame_3_delay-0.1s.png" id="5_lino0"]
+[ext_resource type="Texture2D" uid="uid://bc4jif0ibs68k" path="res://sword_cut_frames/frame_4_delay-0.1s.png" id="6_mwopp"]
+[ext_resource type="Texture2D" uid="uid://ukuebv4figpp" path="res://sword_cut_frames/frame_5_delay-0.1s.png" id="7_bmnm3"]
 
 [sub_resource type="Animation" id="Animation_qq1xm"]
 length = 0.001
@@ -136,6 +80,8 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_s0nc5"]
 resource_name = "swing"
+length = 0.4
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -155,10 +101,10 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3]
+"values": [0, 1, 2, 3, 4]
 }
 
 [sub_resource type="Animation" id="Animation_fm6vp"]
@@ -199,21 +145,43 @@ _data = {
 "walk": SubResource("Animation_fm6vp")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
-script = ExtResource("1_po0o6")
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n7svf"]
+radius = 4.0
+height = 28.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8urlt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_33udi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_33udi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lino0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mwopp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bmnm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_33udi")
+}],
+"loop": true,
+"name": &"swing",
+"speed": 5.0
+}]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
-shape = SubResource("CapsuleShape2D_24c5q")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -30)
-scale = Vector2(4, 4)
-sprite_frames = SubResource("SpriteFrames_hjadv")
-animation = &"idle"
-frame = 1
+[node name="Sword" type="CharacterBody2D"]
+script = ExtResource("1_ka32t")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
@@ -221,7 +189,15 @@ libraries = {
 "": SubResource("AnimationLibrary_1m8rj")
 }
 
-[node name="CoyoteTimer" type="Timer" parent="."]
-one_shot = true
+[node name="Area2D" type="Area2D" parent="."]
 
-[connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_n7svf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, -2)
+sprite_frames = SubResource("SpriteFrames_8urlt")
+animation = &"swing"
+frame = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
