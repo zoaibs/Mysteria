@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://4oros6yx0jue"]
+[gd_scene load_steps=12 format=3 uid="uid://4oros6yx0jue"]
 
 [ext_resource type="PackedScene" uid="uid://bdeudnqonw7x4" path="res://Player1.tscn" id="1_5rop3"]
 [ext_resource type="Script" path="res://intro.gd" id="1_qrqa2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://chlgaovsd0hvn" path="res://mushroom.tscn" id="8_q0kj4"]
 [ext_resource type="PackedScene" uid="uid://cdokwk2w04udu" path="res://sword.tscn" id="9_6cj6a"]
 [ext_resource type="PackedScene" uid="uid://c3x6jpenqmiq7" path="res://obstacles.tscn" id="9_e4lcp"]
+[ext_resource type="PackedScene" uid="uid://de7sc2wjrr3iq" path="res://cpoint.tscn" id="11_t27st"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_qrqa2")
@@ -70,7 +71,7 @@ scale = Vector2(-1, 1)
 
 [node name="Sword" parent="." instance=ExtResource("9_6cj6a")]
 z_index = 4
-position = Vector2(2449, 336)
+position = Vector2(3174, 271)
 scale = Vector2(3, 3)
 
 [node name="Tilemaps" type="Node2D" parent="."]
@@ -93,3 +94,6 @@ offset_bottom = 78.0
 theme_override_fonts/normal_font = ExtResource("5_fcncf")
 theme_override_font_sizes/normal_font_size = 32
 text = "Use [<] and [>] to move, and [Space] to jump!"
+
+[node name="cpoint" parent="." instance=ExtResource("11_t27st")]
+position = Vector2(2599, 353)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cdokwk2w04udu"]
+[gd_scene load_steps=15 format=3 uid="uid://cdokwk2w04udu"]
 
 [ext_resource type="Script" path="res://Sword.gd" id="1_ka32t"]
 [ext_resource type="Texture2D" uid="uid://b6isidtsqc2vg" path="res://sword_cut_frames/frame_2_delay-0.1s.png" id="4_33udi"]
@@ -146,8 +146,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n7svf"]
-radius = 4.0
-height = 28.0
+radius = 16.0
+height = 32.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8urlt"]
 animations = [{
@@ -180,6 +180,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8xwo"]
+size = Vector2(30, 17)
+
 [node name="Sword" type="CharacterBody2D"]
 script = ExtResource("1_ka32t")
 
@@ -189,9 +192,11 @@ libraries = {
 "": SubResource("AnimationLibrary_1m8rj")
 }
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="SwordArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwordArea" groups=["Sword"]]
+visible = false
+position = Vector2(3, 0)
 shape = SubResource("CapsuleShape2D_n7svf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -200,4 +205,9 @@ sprite_frames = SubResource("SpriteFrames_8urlt")
 animation = &"swing"
 frame = 1
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 1.5)
+shape = SubResource("RectangleShape2D_n8xwo")
+disabled = true
+
+[connection signal="body_entered" from="SwordArea" to="." method="_on_area_2d_body_entered"]

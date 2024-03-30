@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://chlgaovsd0hvn"]
+[gd_scene load_steps=18 format=3 uid="uid://chlgaovsd0hvn"]
 
+[ext_resource type="Script" path="res://mushroom.gd" id="1_3vpvw"]
 [ext_resource type="Texture2D" uid="uid://doxdjv7n2wx2n" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Mushroom - Small/SmallMushroom_Idle_1.png" id="1_6gowj"]
 [ext_resource type="Texture2D" uid="uid://dtqu7ea8t8ylv" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Mushroom - Small/SmallMushroom_Idle_2.png" id="2_h74xq"]
 [ext_resource type="Texture2D" uid="uid://cowdfbgnayutj" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Mushroom - Small/SmallMushroom_Idle_3.png" id="3_d72ns"]
@@ -8,10 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://cbyp5mffknfc3" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Mushroom - Small/SmallMushroom_Walk_2.png" id="6_yduf4"]
 [ext_resource type="Texture2D" uid="uid://cl28ydu34xdof" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Mushroom - Small/SmallMushroom_Walk_3.png" id="7_fg1nj"]
 [ext_resource type="Texture2D" uid="uid://dfxnlrogab6op" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Mushroom - Small/SmallMushroom_Walk_4.png" id="8_yrh4e"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6drwe"]
-radius = 19.0
-height = 56.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1ohjw"]
 animations = [{
@@ -187,11 +184,11 @@ _data = {
 "walk": SubResource("Animation_fm6vp")
 }
 
-[node name="Mushroom" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwqyo"]
+size = Vector2(58, 73)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
-shape = SubResource("CapsuleShape2D_6drwe")
+[node name="Mushroom" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_3vpvw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -30)
@@ -205,3 +202,13 @@ autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_1m8rj")
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -2)
+shape = SubResource("RectangleShape2D_uwqyo")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

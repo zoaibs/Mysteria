@@ -10,6 +10,10 @@ const JUMP_VELOCITY = -500.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var can_move = true
 var sword_offset = Vector2(-30, -10)  # Offset for positioning the sword below the player
+var respawn_position = Vector2.ZERO
+
+var picked_sword = false
+
 
 @onready var anim = get_node("AnimationPlayer")
 
@@ -21,10 +25,12 @@ var textbox_visible = false
 var direction = 0  # Define direction as a class member variable
 
 func _physics_process(delta):
+	
 	if get_slide_collision(0):
 		if get_slide_collision(0).get_collider().name == "obstacles":
 			#player die lmao
-			print("PLAYER DIED")
+			
+			respawn_player()
 	
 	
 	if(textbox_visible):
@@ -51,16 +57,17 @@ func _physics_process(delta):
 	direction = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	if direction == -1 and can_move:
 		get_node("AnimatedSprite2D").flip_h = true
-		sword.get_node("AnimatedSprite2D").flip_h = true
-		sword.rotation_degrees = -20
-		sword_offset = Vector2(-64, 3)  # Offset for positioning the sword below the player
+		if picked_sword:
+			sword.get_node("AnimatedSprite2D").flip_h = true
+			sword.rotation_degrees = -20
+			sword_offset = Vector2(-64, 3)  # Offset for positioning the sword below the player
 		
 	elif direction == 1 and can_move: #moving right
 		get_node("AnimatedSprite2D").flip_h = false
-		
-		sword.get_node("AnimatedSprite2D").flip_h = false
-		sword.rotation_degrees = 20
-		sword_offset = Vector2(30, -10)  # Offset for positioning the sword below the player
+		if picked_sword:
+			sword.get_node("AnimatedSprite2D").flip_h = false
+			sword.rotation_degrees = 20
+			sword_offset = Vector2(30, -10)  # Offset for positioning the sword below the player
 	if abs(direction) > 0 and can_move:
 		velocity.x = direction * SPEED
 		if velocity.y == 0:
@@ -81,3 +88,11 @@ func interact_wizard():
 func _on_coyote_timer_timeout():
 	can_jump = false
 	pass  # Replace with function body.
+
+# Function to set the respawn position
+func set_respawn_position(pos: Vector2):
+	respawn_position = pos
+
+# Example of how to respawn the player
+func respawn_player():
+	global_position = respawn_position
