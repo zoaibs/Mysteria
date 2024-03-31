@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -500.0
+const JUMP_VELOCITY = -550.0
 
 @onready var textbox = $Textbox
 @onready var sword = $"../Sword"
