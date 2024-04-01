@@ -35,7 +35,8 @@ func _physics_process(delta):
 			#player die lmao
 			respawn_player()
 		elif get_slide_collision(0).get_collider().name == "ladders":
-			if Input.is_action_just_pressed("climb"):
+			#if Input.is_action_just_pressed("climb"):
+			if Input.is_action_pressed("climb"):
 				is_climbing = true
 				print("climbing!")
 				velocity.y = -150
@@ -56,7 +57,7 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor() and !is_climbing:
 		print(is_climbing)
-		velocity.y += gravity * delta
+		velocity.y += gravity * delta * 1.1
 	
 	if is_on_floor() and can_jump == false:
 		can_jump = true
