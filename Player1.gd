@@ -42,7 +42,7 @@ func _physics_process(delta):
 
 				is_climbing = false
 				velocity.y = 0
-	if get_slide_collision_count() == 0:
+	if get_slide_collision_count() == 0: 
 		is_climbing = false
 	
 #	if get_slide_collision(0):
