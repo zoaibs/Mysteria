@@ -1,0 +1,162 @@
+[gd_scene load_steps=17 format=3 uid="uid://dwstuniutg6ah"]
+
+[ext_resource type="Script" path="res://troll.gd" id="1_6fevi"]
+[ext_resource type="Texture2D" uid="uid://cvg8ko21nucv8" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Troll/Troll_Idle_1.png" id="2_imbkw"]
+[ext_resource type="Texture2D" uid="uid://p5jgqco44j2s" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Troll/Troll_Idle_2.png" id="3_ggexd"]
+[ext_resource type="Texture2D" uid="uid://c145lmafsjlwy" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Troll/Troll_Idle_3.png" id="4_rcvpt"]
+[ext_resource type="Texture2D" uid="uid://dj5h2kswrh1s0" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Troll/Troll_Idle_4.png" id="5_244w8"]
+[ext_resource type="Texture2D" uid="uid://dack06quonb6j" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Troll/Troll_Walk_1.png" id="6_ohxj7"]
+[ext_resource type="Texture2D" uid="uid://cw4ilf7op01lt" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Troll/Troll_Walk_2.png" id="7_nc6hs"]
+[ext_resource type="Texture2D" uid="uid://yu6d1qfwt3sd" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Troll/Troll_Walk_3.png" id="8_3hx81"]
+[ext_resource type="Texture2D" uid="uid://cmcaxr6hjl1a6" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Troll/Troll_Walk_4.png" id="9_ju7vm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5dq72"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_imbkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ggexd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rcvpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_244w8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ohxj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nc6hs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3hx81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ju7vm")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_spf1b"]
+resource_name = "idle"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D2:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_l8nsh"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D2:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_0kkfa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t6mhr"]
+_data = {
+"RESET": SubResource("Animation_0kkfa"),
+"idle": SubResource("Animation_spf1b"),
+"walk": SubResource("Animation_l8nsh")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07r2k"]
+size = Vector2(97.5, 115)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wconh"]
+radius = 364.078
+
+[node name="Troll" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_6fevi")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_5dq72")
+animation = &"walk"
+frame = 1
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_t6mhr")
+}
+
+[node name="HitboxArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea"]
+position = Vector2(1.25, 6.5)
+shape = SubResource("RectangleShape2D_07r2k")
+
+[node name="PlayerDetectArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectArea"]
+shape = SubResource("CircleShape2D_wconh")
+
+[connection signal="area_entered" from="HitboxArea" to="." method="_on_hitbox_area_area_entered"]
+[connection signal="area_exited" from="HitboxArea" to="." method="_on_hitbox_area_area_exited"]

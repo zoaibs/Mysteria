@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://4oros6yx0jue"]
+[gd_scene load_steps=14 format=3 uid="uid://4oros6yx0jue"]
 
 [ext_resource type="PackedScene" uid="uid://bdeudnqonw7x4" path="res://Player1.tscn" id="1_5rop3"]
 [ext_resource type="Script" path="res://intro.gd" id="1_qrqa2"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c3x6jpenqmiq7" path="res://obstacles.tscn" id="9_e4lcp"]
 [ext_resource type="PackedScene" uid="uid://bsm14j84s7cui" path="res://ladders.tscn" id="10_2tdyn"]
 [ext_resource type="PackedScene" uid="uid://de7sc2wjrr3iq" path="res://cpoint.tscn" id="11_t27st"]
+[ext_resource type="PackedScene" uid="uid://dwstuniutg6ah" path="res://troll.tscn" id="13_d4lfl"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_qrqa2")
@@ -182,3 +183,6 @@ scale = Vector2(1, 1)
 [node name="cpoint6" parent="Checkpoints" instance=ExtResource("11_t27st")]
 position = Vector2(2282, -960.5)
 scale = Vector2(1, 1)
+
+[node name="Troll" parent="." instance=ExtResource("13_d4lfl")]
+position = Vector2(7815, 295)
