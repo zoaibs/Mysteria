@@ -29,13 +29,11 @@ var direction = 0  # Define direction as a class member variable
 func _physics_process(delta):
 	
 	lives_text.text = "Lives: " + str(lives)
-	
-	if get_slide_collision(0):
-		if get_slide_collision(0).get_collider().name == "obstacles":
-			#player die lmao
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider().name == "obstacles":
 			respawn_player()
-		elif get_slide_collision(0).get_collider().name == "ladders":
-			#if Input.is_action_just_pressed("climb"):
+		if collision.get_collider().name == "ladders":
 			if Input.is_action_pressed("climb"):
 				is_climbing = true
 
@@ -44,8 +42,25 @@ func _physics_process(delta):
 
 				is_climbing = false
 				velocity.y = 0
-	else:
+	if get_slide_collision_count() == 0:
 		is_climbing = false
+	
+#	if get_slide_collision(0):
+#		if get_slide_collision(0).get_collider().name == "obstacles":
+#			#player die lmao
+#			respawn_player()
+#		elif get_slide_collision(0).get_collider().name == "ladders":
+#			#if Input.is_action_just_pressed("climb"):
+#			if Input.is_action_pressed("climb"):
+#				is_climbing = true
+#
+#				velocity.y = -150
+#			if Input.is_action_just_released("climb"):
+#
+#				is_climbing = false
+#				velocity.y = 0
+#	else:
+#		is_climbing = false
 
 	
 	
