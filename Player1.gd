@@ -38,10 +38,10 @@ func _physics_process(delta):
 			#if Input.is_action_just_pressed("climb"):
 			if Input.is_action_pressed("climb"):
 				is_climbing = true
-				print("climbing!")
+				#print("climbing!")
 				velocity.y = -150
 			if Input.is_action_just_released("climb"):
-				print("no longer climbing")
+				#print("no longer climbing")
 				is_climbing = false
 				velocity.y = 0
 	else:

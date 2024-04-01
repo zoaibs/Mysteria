@@ -128,7 +128,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07r2k"]
-size = Vector2(97.5, 115)
+size = Vector2(97.5, 111)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wconh"]
 radius = 364.078
@@ -150,7 +150,7 @@ libraries = {
 [node name="HitboxArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea"]
-position = Vector2(1.25, 6.5)
+position = Vector2(1.25, 4.5)
 shape = SubResource("RectangleShape2D_07r2k")
 
 [node name="PlayerDetectArea" type="Area2D" parent="."]
@@ -160,3 +160,5 @@ shape = SubResource("CircleShape2D_wconh")
 
 [connection signal="area_entered" from="HitboxArea" to="." method="_on_hitbox_area_area_entered"]
 [connection signal="area_exited" from="HitboxArea" to="." method="_on_hitbox_area_area_exited"]
+[connection signal="body_entered" from="HitboxArea" to="." method="_on_hitbox_area_body_entered"]
+[connection signal="body_entered" from="PlayerDetectArea" to="." method="_on_player_detect_area_body_entered"]
