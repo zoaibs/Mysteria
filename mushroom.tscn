@@ -185,7 +185,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwqyo"]
-size = Vector2(58, 73)
+size = Vector2(58, 56.5)
 
 [node name="Mushroom" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_3vpvw")
@@ -206,7 +206,7 @@ libraries = {
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, -2)
+position = Vector2(1, 6.25)
 shape = SubResource("RectangleShape2D_uwqyo")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
