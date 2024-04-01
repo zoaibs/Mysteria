@@ -21,7 +21,7 @@ var text_queue = []
 
 func _ready():
 	tween.connect("finished", on_tween_finished)
-	print("Starting state: State.READY")
+
 	hide_textbox()
 	queue_text("Wizard: Welcome young lad, to the world of Mysteria! <press E to continue...>")
 	queue_text("Wizard: We were once a prosperous civilization with beautiful land and riches!")
@@ -88,6 +88,6 @@ func change_state(next_state):
 #			print("Changing state to: State.FINISHED")
 
 func on_tween_finished():
-	print("poooppopoo")
+
 	end_symbol.text = "*"
 	change_state(State.FINISHED)

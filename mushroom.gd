@@ -30,7 +30,7 @@ func _on_area_2d_area_exited(area):
 
 
 func _on_area_2d_body_entered(body):
-	print(body.name)
+
 	if body.name == "Player":
 		body.take_damage()
 	pass # Replace with function body.

@@ -14,7 +14,7 @@ func _on_area_2d_body_entered(body):
 		
 		set_process(true)  # Enable _process callback to update position
 	if body.name == "Mushroom":
-		print("hey its a mushroom")
+		
 		body.queue_free()
 	pass # Replace with function body.
 		
