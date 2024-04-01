@@ -5,6 +5,7 @@ var check: Area2D
 
 
 func _on_area_2d_area_entered(area):
+	print("THIS IA CHANGE")
 	check = area
 	#print(area.name)
 	#if area.name == "SwordArea":
