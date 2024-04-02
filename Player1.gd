@@ -4,6 +4,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -550.0
 
 @onready var textbox = $Textbox
+@onready var Endtextbox = $Textbox2
 @onready var sword = $"../Sword"
 @onready var lives_text = $LivesText
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -23,6 +24,7 @@ var coyote_time = 0.3
 var can_jump = false
 
 var textbox_visible = false
+var Endtextbox_visible = false
 
 var direction = 0  # Define direction as a class member variable
 
@@ -72,6 +74,11 @@ func _physics_process(delta):
 	else:
 		textbox.hide()
 	
+	if(Endtextbox_visible):
+		Endtextbox.show()
+	else:
+		Endtextbox.hide()
+		
 	# Add the gravity.
 	if not is_on_floor() and !is_climbing:
 		

@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://4oros6yx0jue"]
+[gd_scene load_steps=16 format=3 uid="uid://4oros6yx0jue"]
 
 [ext_resource type="PackedScene" uid="uid://bdeudnqonw7x4" path="res://Player1.tscn" id="1_5rop3"]
 [ext_resource type="Script" path="res://intro.gd" id="1_qrqa2"]
 [ext_resource type="PackedScene" uid="uid://cixobghs4jhvq" path="res://tilemap.tscn" id="2_0n6l2"]
 [ext_resource type="PackedScene" uid="uid://dst1n4hu58cpq" path="res://wizard.tscn" id="3_foibv"]
+[ext_resource type="PackedScene" uid="uid://c72oc8achxpj1" path="res://textbox2.tscn" id="4_osiav"]
 [ext_resource type="Texture2D" uid="uid://bv0qbpsftofm5" path="res://Background.png" id="4_uatmp"]
 [ext_resource type="FontFile" uid="uid://brem6sb8hylxu" path="res://Perfect DOS VGA 437 Win.ttf" id="5_fcncf"]
 [ext_resource type="PackedScene" uid="uid://c1n6o4tf4lch0" path="res://textbox.tscn" id="7_t51sg"]
@@ -26,6 +27,8 @@ z_index = 5
 position = Vector2(2780, -2462)
 
 [node name="Textbox" parent="Player" instance=ExtResource("7_t51sg")]
+
+[node name="Textbox2" parent="Player" instance=ExtResource("4_osiav")]
 
 [node name="Wizard" parent="." instance=ExtResource("3_foibv")]
 z_index = 3
