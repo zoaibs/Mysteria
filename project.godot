@@ -15,6 +15,11 @@ run/main_scene="res://home_screen.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Game="*res://global/Game.gd"
+Utils="*res://global/utils.gd"
+
 [display]
 
 window/size/viewport_width=1248
