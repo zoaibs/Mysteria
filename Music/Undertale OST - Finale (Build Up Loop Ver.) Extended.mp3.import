@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cacsjttr66fe2"
+path="res://.godot/imported/Undertale OST - Finale (Build Up Loop Ver.) Extended.mp3-9f7b0d2bf5c6670cd14e12eeb90a2af9.mp3str"
+
+[deps]
+
+source_file="res://Music/Undertale OST - Finale (Build Up Loop Ver.) Extended.mp3"
+dest_files=["res://.godot/imported/Undertale OST - Finale (Build Up Loop Ver.) Extended.mp3-9f7b0d2bf5c6670cd14e12eeb90a2af9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
