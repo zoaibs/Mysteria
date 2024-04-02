@@ -19,9 +19,9 @@ script = ExtResource("1_coiud")
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]
 visible = false
-offset_left = 174.0
+offset_left = 274.0
 offset_top = 770.0
-offset_right = 1074.0
+offset_right = 974.0
 offset_bottom = 1024.0
 theme_override_constants/margin_left = 0
 
