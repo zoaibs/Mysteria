@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://chlgaovsd0hvn"]
+[gd_scene load_steps=15 format=3 uid="uid://chlgaovsd0hvn"]
 
 [ext_resource type="Script" path="res://mushroom.gd" id="1_3vpvw"]
 [ext_resource type="Texture2D" uid="uid://doxdjv7n2wx2n" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Mushroom - Small/SmallMushroom_Idle_1.png" id="1_6gowj"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cl28ydu34xdof" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Mushroom - Small/SmallMushroom_Walk_3.png" id="7_fg1nj"]
 [ext_resource type="Texture2D" uid="uid://dfxnlrogab6op" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Mushroom - Small/SmallMushroom_Walk_4.png" id="8_yrh4e"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_1ohjw"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_yqdor"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -47,37 +47,21 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_qq1xm"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_excvw"]
-resource_name = "idle"
-length = 0.4
-loop_mode = 1
-
-[sub_resource type="Animation" id="Animation_agc45"]
-resource_name = "jump"
-length = 0.2
-
-[sub_resource type="Animation" id="Animation_s0nc5"]
-resource_name = "swing"
-
-[sub_resource type="Animation" id="Animation_fm6vp"]
-resource_name = "walk"
-length = 0.4
-loop_mode = 1
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1m8rj"]
-_data = {
-"RESET": SubResource("Animation_qq1xm"),
-"idle": SubResource("Animation_excvw"),
-"jump": SubResource("Animation_agc45"),
-"swing": SubResource("Animation_s0nc5"),
-"walk": SubResource("Animation_fm6vp")
-}
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwqyo"]
 size = Vector2(57, 57)
+
+[sub_resource type="Animation" id="Animation_jkiqd"]
+resource_name = "idle"
+length = 0.4
+
+[sub_resource type="Animation" id="Animation_6gr8m"]
+resource_name = "walk"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ildo"]
+_data = {
+"idle": SubResource("Animation_jkiqd"),
+"walk": SubResource("Animation_6gr8m")
+}
 
 [node name="Mushroom" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_3vpvw")
@@ -85,21 +69,20 @@ script = ExtResource("1_3vpvw")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -30)
 scale = Vector2(4, 4)
-sprite_frames = SubResource("SpriteFrames_1ohjw")
+sprite_frames = SubResource("SpriteFrames_yqdor")
 animation = &"idle"
-frame = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "idle"
-libraries = {
-"": SubResource("AnimationLibrary_1m8rj")
-}
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.5, 5.5)
 shape = SubResource("RectangleShape2D_uwqyo")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+root_node = NodePath("")
+libraries = {
+"": SubResource("AnimationLibrary_8ildo")
+}
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
