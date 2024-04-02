@@ -18,6 +18,7 @@ func _on_area_2d_area_entered(area):
 
 
 func _physics_process(delta):
+	print("hiiiiiiiiiiiiiii")
 	if check:
 		if check.name == "SwordArea":
 			if check.get_parent().is_attack():
