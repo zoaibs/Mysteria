@@ -12,7 +12,7 @@ var can_move = true
 var sword_offset = Vector2(-30, -10)  # Offset for positioning the sword below the player
 var respawn_position = Vector2.ZERO
 var is_climbing = false
-var lives = 3
+var lives = Game.lives
 
 var picked_sword = false
 
@@ -27,8 +27,10 @@ var textbox_visible = false
 var direction = 0  # Define direction as a class member variable
 
 func _physics_process(delta):
-	
-	lives_text.text = "Lives: " + str(lives)
+	if Game.Hslider==0:
+		lives_text.text = "Lives: Infinite"
+	else:
+		lives_text.text = "Lives: " + str(lives)
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		if collision.get_collider().name == "obstacles":
@@ -128,7 +130,7 @@ func set_respawn_position(pos: Vector2):
 
 # Example of how to respawn the player
 func respawn_player():
-	lives = 3
+	lives = Game.lives
 	global_position = respawn_position
 	
 func take_damage():
