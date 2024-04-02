@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dwstuniutg6ah"]
+[gd_scene load_steps=18 format=3 uid="uid://dwstuniutg6ah"]
 
 [ext_resource type="Script" path="res://troll.gd" id="1_6fevi"]
 [ext_resource type="Texture2D" uid="uid://cvg8ko21nucv8" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Troll/Troll_Idle_1.png" id="2_imbkw"]
@@ -133,6 +133,9 @@ size = Vector2(97.5, 111)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ekwf"]
 size = Vector2(416.228, 385.98)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4p5w0"]
+size = Vector2(88, 62)
+
 [node name="Troll" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_6fevi")
 
@@ -159,6 +162,10 @@ shape = SubResource("RectangleShape2D_07r2k")
 position = Vector2(0, 9.53674e-07)
 scale = Vector2(1.34685, -0.282398)
 shape = SubResource("RectangleShape2D_7ekwf")
+
+[node name="PhysicsHitbox" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 21)
+shape = SubResource("RectangleShape2D_4p5w0")
 
 [connection signal="area_entered" from="HitboxArea" to="." method="_on_hitbox_area_area_entered"]
 [connection signal="area_exited" from="HitboxArea" to="." method="_on_hitbox_area_area_exited"]

@@ -7,6 +7,7 @@ var attack_check: Area2D
 var speed = 100
 var player_detected = false
 @onready var player: CharacterBody2D
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var current_anim = "idle"
 func _physics_process(delta):
@@ -14,7 +15,8 @@ func _physics_process(delta):
 		print("Player has been detected")
 		# Get the player's global position
 		var player_position = player.global_position
-		
+		if not is_on_floor():
+			velocity.y += gravity * delta * 1.1
 		# Calculate the direction towards the player
 		var direction = sign(player_position - global_position) #.normalized()
 		print(direction)

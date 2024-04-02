@@ -450,6 +450,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_2mmku")
 
 [node name="obstacles" type="TileMap" groups=["obstacles"]]
+z_index = 12
 texture_filter = 1
 scale = Vector2(6, 6)
 tile_set = SubResource("TileSet_bgysw")
