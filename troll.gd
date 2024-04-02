@@ -20,7 +20,8 @@ func _physics_process(delta):
 		print(direction)
 		
 		# Set the velocity to move towards the player's x position
-		velocity.x = direction.x * speed  # Adjust 'speed' as needed
+		if is_on_floor():
+			velocity.x = direction.x * speed  # Adjust 'speed' as needed
 		print(velocity.x)
 		# Optionally, you can also adjust the Y velocity if you want the monster to move vertically
 		# velocity.y = direction.y * speed
