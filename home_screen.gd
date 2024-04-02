@@ -3,7 +3,10 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if Game.sounds==true:
+		$BackgroundMusic.volume_db=2
+	else:
+		$BackgroundMusic.volume_db=-80
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
