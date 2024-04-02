@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://intro.gd" id="1_qrqa2"]
 [ext_resource type="PackedScene" uid="uid://cixobghs4jhvq" path="res://tilemap.tscn" id="2_0n6l2"]
 [ext_resource type="PackedScene" uid="uid://dst1n4hu58cpq" path="res://wizard.tscn" id="3_foibv"]
-[ext_resource type="PackedScene" path="res://textbox2.tscn" id="4_osiav"]
+[ext_resource type="PackedScene" uid="uid://c72oc8achxpj1" path="res://textbox2.tscn" id="4_osiav"]
 [ext_resource type="Texture2D" uid="uid://bv0qbpsftofm5" path="res://Background.png" id="4_uatmp"]
 [ext_resource type="FontFile" uid="uid://brem6sb8hylxu" path="res://Perfect DOS VGA 437 Win.ttf" id="5_fcncf"]
 [ext_resource type="PackedScene" uid="uid://c1n6o4tf4lch0" path="res://textbox.tscn" id="7_t51sg"]
@@ -15,9 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://de7sc2wjrr3iq" path="res://cpoint.tscn" id="11_t27st"]
 [ext_resource type="PackedScene" uid="uid://dwstuniutg6ah" path="res://troll.tscn" id="13_d4lfl"]
 [ext_resource type="AudioStream" uid="uid://cacsjttr66fe2" path="res://Music/Undertale OST - Finale (Build Up Loop Ver.) Extended.mp3" id="14_hsvmk"]
-[ext_resource type="PackedScene" uid="uid://cdud7ifyuyair" path="res://new_sign.tscn" id="16_qiolt"]
+[ext_resource type="PackedScene" path="res://new_sign.tscn" id="16_qiolt"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_qrqa2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
