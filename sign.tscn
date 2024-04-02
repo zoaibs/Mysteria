@@ -11,12 +11,14 @@ border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 
-[node name="Textbox" type="CanvasLayer"]
+[node name="Sign" type="CanvasLayer"]
 offset = Vector2(-700, 0)
 transform = Transform2D(1, 0, 0, 1, -700, 0)
 script = ExtResource("1_jkaek")
+text_display = "yeet"
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]
+visible = false
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
