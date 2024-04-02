@@ -81,10 +81,19 @@ func _physics_process(delta):
 		Endtextbox.hide()
 	
 	#creating boss health bar
-	if Game.bossBattle:
-		while bossHP.value<120:
-			bossHP.value+=1
-		Game.bossBattle=false
+	var numRuns=0
+	if numRuns<1:
+		if Game.bossBattle:
+			#await get_tree().create_timer(1.2).timeout
+			bossHP.visible=true
+			#await get_tree().create_timer(.8).timeout
+			while bossHP.value<120:
+				bossHP.value+=1
+				await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(6).timeout
+			numRuns+=2
+
+		#Game.bossBattle=false
 	
 	# Add the gravity.
 	if not is_on_floor() and !is_climbing:

@@ -14,7 +14,7 @@ position = Vector2(2620, -2339)
 
 [node name="Player" parent="." instance=ExtResource("1_vgavt")]
 z_index = 5
-position = Vector2(73, 406)
+position = Vector2(53, 442)
 
 [node name="Textbox" parent="Player" instance=ExtResource("2_411nj")]
 
