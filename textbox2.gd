@@ -39,6 +39,7 @@ func _ready():
 	queue_text("Wizard: Enough out of you! You don't know what I have gone through")
 	queue_text("Wizard: Now prepare to never see the light of day again")
 	queue_text("You: So be it. I will defeat you and help change your ways")
+
 func _process(delta):
 	match current_state:
 		State.READY:
@@ -59,7 +60,7 @@ func _process(delta):
 				hide_textbox()
 				if text_queue.size() == 0:
 					get_parent().can_move = true
-				
+					Game.bossBattle=true
 
 func queue_text(next_text):
 	text_queue.push_back(next_text)

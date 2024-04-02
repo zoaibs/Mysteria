@@ -3,8 +3,9 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -550.0
 
-@onready var textbox = $Textbox
-@onready var Endtextbox = $Textbox2
+@onready var textbox = $Textbox2
+@onready var Endtextbox = $Textbox
+@onready var bossHP = $bossHP
 @onready var sword = $"../Sword"
 @onready var lives_text = $LivesText
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -78,7 +79,13 @@ func _physics_process(delta):
 		Endtextbox.show()
 	else:
 		Endtextbox.hide()
-		
+	
+	#creating boss health bar
+	if Game.bossBattle:
+		while bossHP.value<120:
+			bossHP.value+=1
+		Game.bossBattle=false
+	
 	# Add the gravity.
 	if not is_on_floor() and !is_climbing:
 		
@@ -145,3 +152,5 @@ func take_damage():
 	lives = lives - 1
 	if lives == 0:
 		respawn_player()
+		
+
