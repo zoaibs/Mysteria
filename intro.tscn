@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://de7sc2wjrr3iq" path="res://cpoint.tscn" id="11_t27st"]
 [ext_resource type="PackedScene" uid="uid://dwstuniutg6ah" path="res://troll.tscn" id="13_d4lfl"]
 [ext_resource type="AudioStream" uid="uid://cacsjttr66fe2" path="res://Music/Undertale OST - Finale (Build Up Loop Ver.) Extended.mp3" id="14_hsvmk"]
-[ext_resource type="PackedScene" uid="uid://cdud7ifyuyair" path="res://new_sign.tscn" id="16_qiolt"]
+[ext_resource type="PackedScene" path="res://new_sign.tscn" id="16_qiolt"]
 
 [node name="Node2D2" type="Node2D"]
 script = ExtResource("1_qrqa2")

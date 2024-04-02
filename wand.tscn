@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhji8kcm3c0ui"]
+
+[ext_resource type="Texture2D" uid="uid://da0w8rwc5tajp" path="res://Elementstäbe.png" id="1_qla8j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a0de4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qla8j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_puktf"]
+size = Vector2(27, 60.5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9.1198, -3.575)
+scale = Vector2(3.73503, 3.92812)
+sprite_frames = SubResource("SpriteFrames_a0de4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, -5)
+shape = SubResource("RectangleShape2D_puktf")

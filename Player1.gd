@@ -89,8 +89,8 @@ func _physics_process(delta):
 			#await get_tree().create_timer(.8).timeout
 			while bossHP.value<120:
 				bossHP.value+=1
-				await get_tree().create_timer(1).timeout
-			await get_tree().create_timer(6).timeout
+				#await get_tree().create_timer(1).timeout
+			#await get_tree().create_timer(6).timeout
 			numRuns+=2
 
 		#Game.bossBattle=false
