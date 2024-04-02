@@ -33,8 +33,9 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		if collision.get_collider().name == "obstacles":
 			respawn_player()
-		if collision.get_collider().name == "ladders":
-			if Input.is_action_pressed("climb"):
+		if Input.is_action_pressed("climb"):
+			if collision.get_collider().name == "ladders":
+			
 				is_climbing = true
 
 				velocity.y = -150

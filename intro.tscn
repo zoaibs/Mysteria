@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://4oros6yx0jue"]
+[gd_scene load_steps=15 format=3 uid="uid://4oros6yx0jue"]
 
 [ext_resource type="PackedScene" uid="uid://bdeudnqonw7x4" path="res://Player1.tscn" id="1_5rop3"]
 [ext_resource type="Script" path="res://intro.gd" id="1_qrqa2"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bsm14j84s7cui" path="res://ladders.tscn" id="10_2tdyn"]
 [ext_resource type="PackedScene" uid="uid://de7sc2wjrr3iq" path="res://cpoint.tscn" id="11_t27st"]
 [ext_resource type="PackedScene" uid="uid://dwstuniutg6ah" path="res://troll.tscn" id="13_d4lfl"]
+[ext_resource type="AudioStream" uid="uid://cacsjttr66fe2" path="res://Music/Undertale OST - Finale (Build Up Loop Ver.) Extended.mp3" id="14_hsvmk"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_qrqa2")
@@ -200,3 +201,7 @@ scale = Vector2(0.166667, 0.166667)
 [node name="Troll2" parent="Trolls" instance=ExtResource("13_d4lfl")]
 position = Vector2(1468.5, -1.33333)
 scale = Vector2(0.166667, 0.166667)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_hsvmk")
+autoplay = true
