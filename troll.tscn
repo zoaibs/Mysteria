@@ -128,13 +128,13 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07r2k"]
-size = Vector2(97.5, 111)
+size = Vector2(97.5, 107)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ekwf"]
 size = Vector2(416.228, 385.98)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4p5w0"]
-size = Vector2(88, 62)
+size = Vector2(88, 66)
 
 [node name="Troll" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_6fevi")
@@ -153,7 +153,7 @@ libraries = {
 [node name="HitboxArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea"]
-position = Vector2(1.25, 4.5)
+position = Vector2(1.25, 2.5)
 shape = SubResource("RectangleShape2D_07r2k")
 
 [node name="PlayerDetectArea" type="Area2D" parent="."]
@@ -164,7 +164,7 @@ scale = Vector2(1.34685, -0.282398)
 shape = SubResource("RectangleShape2D_7ekwf")
 
 [node name="PhysicsHitbox" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 21)
+position = Vector2(-3, 23)
 shape = SubResource("RectangleShape2D_4p5w0")
 
 [connection signal="area_entered" from="HitboxArea" to="." method="_on_hitbox_area_area_entered"]
