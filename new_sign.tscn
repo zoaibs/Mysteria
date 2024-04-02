@@ -12,7 +12,7 @@ border_width_right = 10
 border_width_bottom = 10
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vq5ln"]
-size = Vector2(100, 119)
+size = Vector2(37, 100)
 
 [node name="NewSign" type="CharacterBody2D"]
 script = ExtResource("1_coiud")
@@ -73,7 +73,7 @@ text = "<"
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(612, 704.5)
+position = Vector2(612.5, 714)
 shape = SubResource("RectangleShape2D_vq5ln")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
