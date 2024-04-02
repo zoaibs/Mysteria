@@ -342,44 +342,44 @@ autoplay = true
 [node name="NewSign" parent="Signs" instance=ExtResource("16_qiolt")]
 z_index = 11
 position = Vector2(1909, -3047)
-text_display = "Ya yeet"
+text_display = "Medieval knights were expected to follow the code of chivalry, which emphasized virtues such as bravery, loyalty, and honor. Courtly love, a concept rooted in chivalry, celebrated romantic love and often involved elaborate rituals and poetry."
 
 [node name="NewSign2" parent="Signs" instance=ExtResource("16_qiolt")]
 z_index = 11
 position = Vector2(3100, -407)
-text_display = "Ya yeet"
+text_display = "Society in the medieval period was organized around the feudal system, where land was exchanged for loyalty and military service. Kings granted land (fiefs) to nobles (lords), who, in turn, granted land to lesser nobles (vassals) in exchange for loyalty and military support."
 
 [node name="NewSign3" parent="Signs" instance=ExtResource("16_qiolt")]
 z_index = 11
 position = Vector2(4970, -647)
-text_display = "Ya yeet"
+text_display = "Castles were central to medieval life, serving as defensive fortifications, administrative centers, and symbols of power. Siege warfare was common during this period, with attackers using various tactics such as siege engines, battering rams, and siege towers to breach castle walls."
 
 [node name="NewSign4" parent="Signs" instance=ExtResource("16_qiolt")]
 z_index = 11
 position = Vector2(4545, -1271)
-text_display = "Ya yeet"
+text_display = "The Black Death, one of the deadliest pandemics in human history, ravaged Europe during the 14th century. It is estimated to have killed between 75 to 200 million people, decimating populations and leading to significant social and economic upheaval."
 
 [node name="NewSign5" parent="Signs" instance=ExtResource("16_qiolt")]
 z_index = 11
 position = Vector2(5257, -2183)
-text_display = "Ya yeet"
+text_display = "The medieval period saw the emergence of universities in Europe, with notable institutions such as the University of Oxford and the University of Paris. These universities played a crucial role in the advancement of learning, particularly in fields such as theology, philosophy, and law."
 
 [node name="NewSign6" parent="Signs" instance=ExtResource("16_qiolt")]
 z_index = 11
 position = Vector2(6799, -983)
-text_display = "Ya yeet"
+text_display = "Medical knowledge in the medieval period was influenced by ancient Greek and Roman texts. However, medical practices were often based on superstition and religious beliefs. Barber-surgeons performed procedures such as bloodletting and amputations, while herbal remedies were commonly used to treat various ailments."
 
 [node name="NewSign7" parent="Signs" instance=ExtResource("16_qiolt")]
 z_index = 11
 position = Vector2(6645, -2279)
-text_display = "Ya yeet"
+text_display = "Medieval art and architecture are characterized by intricate craftsmanship, religious themes, and symbolism. Gothic architecture, with its pointed arches, ribbed vaults, and flying buttresses, reached its peak during the medieval period, producing iconic structures such as Notre-Dame Cathedral."
 
 [node name="NewSign8" parent="Signs" instance=ExtResource("16_qiolt")]
 z_index = 11
 position = Vector2(4279, -3143)
-text_display = "Ya yeet"
+text_display = "The Crusades were a series of religious wars sanctioned by the Latin Church in the medieval period. These military campaigns were aimed at reclaiming Jerusalem and other holy sites from Muslim control. The Crusades had profound cultural, economic, and political impacts on Europe and the Middle East."
 
 [node name="NewSign9" parent="Signs" instance=ExtResource("16_qiolt")]
 z_index = 11
 position = Vector2(475, -2138)
-text_display = "Ya yeet"
+text_display = "Feasting was a significant aspect of medieval life, with elaborate banquets and feasts held to celebrate religious holidays, weddings, and other special occasions. These events featured an abundance of food, music, dancing, and entertainment."
