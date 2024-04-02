@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdud7ifyuyair"]
+
+[ext_resource type="FontFile" uid="uid://brem6sb8hylxu" path="res://Perfect DOS VGA 437 Win.ttf" id="1_aweyp"]
+[ext_resource type="Script" path="res://sign.gd" id="1_coiud"]
+[ext_resource type="Texture2D" uid="uid://bdg3ol7lfobmx" path="res://Signpost.png" id="2_2oxp5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tcqox"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vq5ln"]
+size = Vector2(168, 164)
+
+[node name="NewSign" type="CharacterBody2D"]
+script = ExtResource("1_coiud")
+
+[node name="TextboxContainer" type="MarginContainer" parent="."]
+visible = false
+offset_left = 174.0
+offset_top = 770.0
+offset_right = 1074.0
+offset_bottom = 1024.0
+theme_override_constants/margin_left = 0
+
+[node name="Panel" type="Panel" parent="TextboxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tcqox")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextboxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Panel" type="Panel" parent="TextboxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextboxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Start" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(27, 153)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_aweyp")
+theme_override_font_sizes/font_size = 48
+text = ">"
+
+[node name="Label" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_aweyp")
+theme_override_font_sizes/font_size = 48
+text = "heyyyyyyyyyyyyyyyyyyyyyyyy"
+autowrap_mode = 3
+clip_text = true
+
+[node name="End" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(27, 51)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_aweyp")
+theme_override_font_sizes/font_size = 48
+text = "<"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(613, 682)
+shape = SubResource("RectangleShape2D_vq5ln")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(612, 698)
+scale = Vector2(3, 3)
+texture = ExtResource("2_2oxp5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
