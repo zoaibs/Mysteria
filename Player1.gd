@@ -3,8 +3,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -550.0
 
-@onready var textbox = $Textbox2
-@onready var Endtextbox = $Textbox
+@onready var textbox = $Textbox
+@onready var Endtextbox = $Textbox2
 @onready var bossHP = $bossHP
 @onready var sword = $"../Sword"
 @onready var lives_text = $LivesText
@@ -37,7 +37,7 @@ var Endtextbox_visible = false
 var direction = 0  # Define direction as a class member variable
 
 func _physics_process(delta):
-	
+	bossHP.visible = Game.bossBattle
 	if get_tree().current_scene.name == "end_screen":
 		
 		score_text.visible = false
