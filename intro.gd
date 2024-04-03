@@ -7,5 +7,6 @@ func _ready():
 		$AudioStreamPlayer.volume_db=-80
 
 func _process(delta):
-	if Game.bossBattle:
-		get_tree().change_scene_to_file("res://boss.tscn")
+	pass
+	#if Game.bossBattle:
+		#get_tree().change_scene_to_file("res://boss.tscn")

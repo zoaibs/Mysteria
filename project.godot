@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Mysteria"
-run/main_scene="res://boss.tscn"
+run/main_scene="res://home_screen.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
