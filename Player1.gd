@@ -8,6 +8,8 @@ const JUMP_VELOCITY = -550.0
 @onready var bossHP = $bossHP
 @onready var sword = $"../Sword"
 @onready var lives_text = $LivesText
+@onready var score_text = $ScoreText
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var can_move = true
@@ -17,6 +19,7 @@ var is_climbing = false
 var lives = Game.lives
 var numRuns=0
 var picked_sword = false
+var score = 0
 
 @onready var jump_sfx = $"../SFX/jumpSFX"
 
@@ -33,6 +36,7 @@ var Endtextbox_visible = false
 var direction = 0  # Define direction as a class member variable
 
 func _physics_process(delta):
+	score_text.text = "Score: " + str(score)
 	if Game.Hslider==0:
 		lives_text.text = "Lives: Infinite"
 	else:
@@ -155,5 +159,8 @@ func take_damage():
 	lives = lives - 1
 	if lives == 0:
 		respawn_player()
-		
+		add_score(-1)
+
+func add_score(points):
+	score = score + points
 

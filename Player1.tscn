@@ -234,6 +234,15 @@ theme_override_fonts/normal_font = ExtResource("10_i8ab6")
 theme_override_font_sizes/normal_font_size = 64
 text = "Lives: 3"
 
+[node name="ScoreText" type="RichTextLabel" parent="."]
+offset_left = -573.0
+offset_top = -288.0
+offset_right = -193.0
+offset_bottom = -210.0
+theme_override_fonts/normal_font = ExtResource("10_i8ab6")
+theme_override_font_sizes/normal_font_size = 64
+text = "Score: 0"
+
 [node name="bossHP" type="ProgressBar" parent="."]
 visible = false
 modulate = Color(1, 0, 0, 1)
