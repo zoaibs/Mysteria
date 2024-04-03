@@ -213,7 +213,7 @@ shape = SubResource("CapsuleShape2D_24c5q")
 position = Vector2(0, -30)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_hjadv")
-animation = &"idle"
+animation = &"walk"
 frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
