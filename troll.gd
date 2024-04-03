@@ -42,12 +42,11 @@ func _physics_process(delta):
 		if attack_check.name == "SwordArea":
 			if attack_check.get_parent().is_attack():
 				hp-=1
-				if hp==0:
-					player.add_score(10)
-					death_sfx.play()
-					get_parent().remove_child(self)
+			if hp==0:
+				player.add_score(10)
+				death_sfx.play()
+				get_parent().remove_child(self)
 		
-
 
 
 
