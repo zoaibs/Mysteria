@@ -157,6 +157,7 @@ func set_respawn_position(pos: Vector2):
 
 # Example of how to respawn the player
 func respawn_player():
+	add_score(-3)
 	lives = Game.lives
 	global_position = respawn_position
 	if Game.bossBattle:
@@ -167,7 +168,7 @@ func take_damage():
 	lives = lives - 1
 	if lives == 0:
 		respawn_player()
-		add_score(-3)
+		
 
 func add_score(points):
 	score = score + points
