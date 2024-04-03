@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c85c1csnelkcn"]
+[gd_scene load_steps=13 format=3 uid="uid://c85c1csnelkcn"]
 
 [ext_resource type="PackedScene" uid="uid://cixobghs4jhvq" path="res://tilemap.tscn" id="1_2ems2"]
 [ext_resource type="Script" path="res://end_screen.gd" id="1_3ummj"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://b5gqvwg53k7do" path="res://sfx/swordswing.wav" id="8_kixpc"]
 [ext_resource type="AudioStream" uid="uid://bbt25mq337utl" path="res://sfx/monster_death.wav" id="9_mput5"]
 [ext_resource type="FontFile" uid="uid://brem6sb8hylxu" path="res://Perfect DOS VGA 437 Win.ttf" id="10_myucj"]
+[ext_resource type="AudioStream" uid="uid://chi2m27sq8r6f" path="res://Memories-of-Spring(chosic.com).mp3" id="11_k7rvq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ufig2"]
 
@@ -76,5 +77,9 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_ufig2")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ufig2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ufig2")
 text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_k7rvq")
+autoplay = true
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
