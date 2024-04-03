@@ -33,6 +33,9 @@ func _process(delta):
 	if Game.bossHP<40:
 		$"../fire7".visible=true
 		$"../fire8".visible=true
+	if Game.bossHP<=1:
+		thereset()
+		#get_tree().change_scene_to_file("res://end_screen.tscn")
 	
 	
 

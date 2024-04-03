@@ -15,11 +15,11 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_area_2d_2_body_entered(body):
-	if body.name == "Player" :
+	if body.name == "Player" and $".".visible==true:
 		body.take_damage()
 
 func _on_area_2d_area_entered(area):
-		check = area
+	check = area
 
 func _physics_process(delta):
 	if check:
@@ -46,6 +46,10 @@ func _process(delta):
 		elif Game.bossHP == 120:
 			$".".position.x=650
 			$".".position.y=252
+		
+		if Game.bossHP<=1:
+			$".".visible=false
+			$".".position.x=4650
 			
 
 
