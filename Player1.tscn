@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bdeudnqonw7x4"]
+[gd_scene load_steps=21 format=3 uid="uid://bdeudnqonw7x4"]
 
 [ext_resource type="Script" path="res://Player1.gd" id="1_po0o6"]
 [ext_resource type="Texture2D" uid="uid://b10t31dhcn7yn" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Idle_1.png" id="1_r0ijj"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://c435p3vpmusm5" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Walk_3.png" id="7_543so"]
 [ext_resource type="Texture2D" uid="uid://bd74sqtmmea58" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Elf - Male/Elf_M_Walk_4.png" id="8_wattg"]
 [ext_resource type="FontFile" uid="uid://cxhawnnon7lsg" path="res://Alkhemikal.ttf" id="10_i8ab6"]
+[ext_resource type="Texture2D" uid="uid://durwb3hhalqww" path="res://healthbarUnder.png" id="11_x023r"]
+[ext_resource type="Texture2D" uid="uid://ddw08q46bafcq" path="res://healthbarProgress.png" id="12_j7wdp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_24c5q"]
 radius = 19.0
@@ -245,15 +247,16 @@ theme_override_fonts/normal_font = ExtResource("10_i8ab6")
 theme_override_font_sizes/normal_font_size = 64
 text = "Score: 0"
 
-[node name="bossHP" type="ProgressBar" parent="."]
-visible = false
-modulate = Color(1, 0, 0, 1)
-offset_left = -272.0
-offset_top = -328.0
-offset_right = 498.0
-offset_bottom = -301.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="bossHP" type="TextureProgressBar" parent="."]
+offset_left = 93.0
+offset_top = -323.0
+offset_right = 157.0
+offset_bottom = -313.0
+scale = Vector2(6, 6)
 max_value = 120.0
-step = 1.0
+step = 20.0
+value = 80.0
+texture_under = ExtResource("11_x023r")
+texture_progress = ExtResource("12_j7wdp")
 
 [connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
