@@ -386,6 +386,5 @@ text_display = "Enter this door if you dare..."
 position = Vector2(-240, -2316)
 scale = Vector2(0.5, 0.5)
 
-[node name="JumpSFX" type="AudioStreamPlayer2D" parent="."]
+[node name="jumpSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_iubxc")
-autoplay = true

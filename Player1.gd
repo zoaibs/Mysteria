@@ -18,7 +18,7 @@ var lives = Game.lives
 var numRuns=0
 var picked_sword = false
 
-@onready var jump_sfx = $"../JumpSFX"
+@onready var jump_sfx = $"../jumpSFX"
 
 
 @onready var anim = get_node("AnimationPlayer")
@@ -114,6 +114,7 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 		anim.play("jump")
 		jump_sfx.play()
+		
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
