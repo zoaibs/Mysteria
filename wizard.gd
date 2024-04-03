@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var first_interaction_happened = false
+var second_interaction_happened=false
 var check: Area2D
 
 func _on_area_2d_body_entered(body):
@@ -8,7 +9,10 @@ func _on_area_2d_body_entered(body):
 		
 		body.interact_wizard()
 		first_interaction_happened = true
-		
+	
+	if body.is_in_group("Player") and !second_interaction_happened and Game.bossBattle:
+		body.interact_wizard()
+		second_interaction_happened=true
 		
 
 	
@@ -18,30 +22,33 @@ func _on_area_2d_2_body_entered(body):
 	if body.name == "Player" and $".".visible==true:
 		body.take_damage()
 
-func _on_area_2d_area_entered(area):
+func _on_area_2d_2_area_entered(area):
 	check = area
-
+	print("Check:",check)
+	
 func _physics_process(delta):
 	if check:
 		if check.name == "SwordArea":
 			if check.get_parent().is_attack():
-				Game.bossHP-=1
+				Game.bossHP-=20
+				check = null
 
 func _process(delta):
-	if first_interaction_happened and Game.score > 1:
-		if Game.bossHP<20:
+	print($".".position.x,", ", $".".position.y)
+	if second_interaction_happened:
+		if Game.bossHP<=20:
 			$".".position.x=78
 			$".".position.y=446
-		elif Game.bossHP<40:
+		elif Game.bossHP<=40:
 			$".".position.x=1186
 			$".".position.y=446
-		elif Game.bossHP<60:
+		elif Game.bossHP<=60:
 			$".".position.x=650
 			$".".position.y=252
-		elif Game.bossHP<80:
+		elif Game.bossHP<=80:
 			$".".position.x=1186
 			$".".position.y=446
-		elif Game.bossHP<100:
+		elif Game.bossHP<=100:
 			$".".position.x=78
 			$".".position.y=446
 		elif Game.bossHP == 120:
@@ -52,5 +59,7 @@ func _process(delta):
 			$".".visible=false
 			$".".position.x=4650
 			
+
+
 
 

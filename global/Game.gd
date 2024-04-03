@@ -1,6 +1,6 @@
 extends Node
 
-var lives= 300
+var lives= 3
 var sounds=true
 var Hslider = 2
 var bossBattle=false

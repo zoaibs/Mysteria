@@ -1,5 +1,7 @@
 extends Node2D
 
+
+# Called when the node enters the scene tree for the first time.
 func _ready():
 	if Game.sounds == true:
 		$AudioStreamPlayer.volume_db = 2
@@ -12,7 +14,7 @@ func _ready():
 		$SFX/attackSFX.volume_db=-80
 		$SFX/deathSFX.volume_db=-80
 
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-	#if Game.bossBattle:
-		#get_tree().change_scene_to_file("res://boss.tscn")

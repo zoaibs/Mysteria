@@ -54,7 +54,7 @@ func _process(delta):
 			end_symbol.text = "v"
 			change_state(State.FINISHED)
 		State.FINISHED:
-			if Input.is_action_just_pressed("interact") and get_parent().textbox_visible:
+			if Input.is_action_just_pressed("interact") and get_parent().Endtextbox_visible:
 				change_state(State.READY)
 				hide_textbox()
 				if text_queue.size() == 0:

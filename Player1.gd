@@ -143,7 +143,8 @@ func _physics_process(delta):
 
 func interact_wizard():
 	can_move = false
-	textbox_visible = true
+	textbox_visible = !Game.bossBattle
+	Endtextbox_visible = Game.bossBattle
 	
 	# Add dialogue scene
 

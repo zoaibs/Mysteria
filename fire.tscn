@@ -133,7 +133,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_adgux"]
 resource_name = "no_fire"
-length = 2.2
+length = 1.1
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_711wd"]
 _data = {
