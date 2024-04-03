@@ -3,6 +3,8 @@ extends CharacterBody2D
 var first_interaction_happened = false
 var second_interaction_happened=false
 var check: Area2D
+@onready var teleportSFX = $"../SFX/teleportSFX"
+@onready var damageSFX = $"../SFX/damageSFX"
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player") and !first_interaction_happened:
@@ -31,6 +33,10 @@ func _physics_process(delta):
 		if check.name == "SwordArea":
 			if check.get_parent().is_attack():
 				Game.bossHP-=20
+				if Game.bossHP > 0:
+					teleportSFX.play()
+				else:
+					damageSFX.play()
 				check = null
 
 func _process(delta):
