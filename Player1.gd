@@ -18,7 +18,7 @@ var lives = Game.lives
 var numRuns=0
 var picked_sword = false
 
-@onready var jump_sfx = $"../jumpSFX"
+@onready var jump_sfx = $"../SFX/jumpSFX"
 
 
 
@@ -54,22 +54,6 @@ func _physics_process(delta):
 	if get_slide_collision_count() == 0: 
 		is_climbing = false
 	
-#	if get_slide_collision(0):
-#		if get_slide_collision(0).get_collider().name == "obstacles":
-#			#player die lmao
-#			respawn_player()
-#		elif get_slide_collision(0).get_collider().name == "ladders":
-#			#if Input.is_action_just_pressed("climb"):
-#			if Input.is_action_pressed("climb"):
-#				is_climbing = true
-#
-#				velocity.y = -150
-#			if Input.is_action_just_released("climb"):
-#
-#				is_climbing = false
-#				velocity.y = 0
-#	else:
-#		is_climbing = false
 
 	
 	
