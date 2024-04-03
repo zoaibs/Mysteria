@@ -386,5 +386,11 @@ text_display = "Enter this door if you dare..."
 position = Vector2(-240, -2316)
 scale = Vector2(0.5, 0.5)
 
-[node name="jumpSFX" type="AudioStreamPlayer" parent="."]
+[node name="SFX" type="Node" parent="."]
+
+[node name="jumpSFX" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("18_iubxc")
+
+[node name="attackSFX" type="AudioStreamPlayer" parent="SFX"]
+
+[node name="deathSFX" type="AudioStreamPlayer" parent="SFX"]

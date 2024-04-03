@@ -21,6 +21,7 @@ var picked_sword = false
 @onready var jump_sfx = $"../jumpSFX"
 
 
+
 @onready var anim = get_node("AnimationPlayer")
 
 var coyote_time = 0.3

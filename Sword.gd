@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 var player: Node2D  # Reference to the player node
 var theBody
-
+@onready var attack_sfx = $"../SFX/attackSFX"
 @onready var sword_anim = get_node("AnimationPlayer")
 
 var is_attacking = false
@@ -30,7 +30,7 @@ func _process(delta):
 		
 		global_position = player.global_position + player.sword_offset  # Set sword position to player position
 		if Input.is_action_just_pressed("attack"):
-			
+			attack_sfx.play()
 			sword_anim.play("swing")
 			
 			

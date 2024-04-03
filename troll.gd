@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 var attack_check: Area2D
 @onready var anim = $AnimationPlayer2
+@onready var death_sfx = $"../../SFX/deathSFX"
 
 var speed = 100
 var player_detected = false
@@ -39,6 +40,7 @@ func _physics_process(delta):
 	if attack_check:
 		if attack_check.name == "SwordArea":
 			if attack_check.get_parent().is_attack():
+				death_sfx.play()
 				get_parent().remove_child(self)
 		
 
