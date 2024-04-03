@@ -4,7 +4,7 @@ var first_interaction_happened = false
 var check: Area2D
 
 func _on_area_2d_body_entered(body):
-	if body.is_in_group("Player") and !first_interaction_happened and !Game.bossBattle:
+	if body.is_in_group("Player") and !first_interaction_happened:
 		
 		body.interact_wizard()
 		first_interaction_happened = true
@@ -28,6 +28,7 @@ func _physics_process(delta):
 				Game.bossHP-=1
 
 func _process(delta):
+	if first_interaction_happened and Game.score > 1:
 		if Game.bossHP<20:
 			$".".position.x=78
 			$".".position.y=446

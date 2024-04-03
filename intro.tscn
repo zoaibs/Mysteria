@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dwstuniutg6ah" path="res://troll.tscn" id="13_d4lfl"]
 [ext_resource type="AudioStream" uid="uid://cacsjttr66fe2" path="res://Music/Undertale OST - Finale (Build Up Loop Ver.) Extended.mp3" id="14_hsvmk"]
 [ext_resource type="PackedScene" uid="uid://cdud7ifyuyair" path="res://new_sign.tscn" id="16_qiolt"]
-[ext_resource type="PackedScene" path="res://door.tscn" id="17_rgu0s"]
+[ext_resource type="PackedScene" uid="uid://dh0oc3skj8sy6" path="res://door.tscn" id="17_rgu0s"]
 [ext_resource type="AudioStream" uid="uid://dhdtbar1rsdj5" path="res://sfx/jump.wav" id="18_iubxc"]
 [ext_resource type="AudioStream" uid="uid://b5gqvwg53k7do" path="res://sfx/swordswing.wav" id="19_q00tr"]
 [ext_resource type="AudioStream" uid="uid://bbt25mq337utl" path="res://sfx/monster_death.wav" id="20_2h7wq"]
@@ -29,7 +29,7 @@ position = Vector2(-160, 123)
 
 [node name="Player" parent="." instance=ExtResource("1_5rop3")]
 z_index = 5
-position = Vector2(1842, 323)
+position = Vector2(187, 454)
 
 [node name="Textbox" parent="Player" instance=ExtResource("7_t51sg")]
 
@@ -241,13 +241,13 @@ theme_override_font_sizes/normal_font_size = 32
 text = "Pick up the sword and use the down button to attack the mushroom!"
 
 [node name="LadderTip" type="RichTextLabel" parent="Texts"]
-offset_left = 4457.0
-offset_top = -252.0
-offset_right = 5056.0
-offset_bottom = -131.0
+offset_left = 4428.0
+offset_top = -282.0
+offset_right = 4652.0
+offset_bottom = 17.0
 theme_override_fonts/normal_font = ExtResource("5_fcncf")
 theme_override_font_sizes/normal_font_size = 32
-text = "Touch a ladder and hold the up
+text = "Run into a ladder and hold the up
 arrow to climb!"
 
 [node name="Checkpoints" type="Node2D" parent="."]
