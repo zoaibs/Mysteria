@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 var player: Node2D  # Reference to the player node
-
+var theBody
 
 @onready var sword_anim = get_node("AnimationPlayer")
 
@@ -14,11 +14,15 @@ func _on_area_2d_body_entered(body):
 		
 		set_process(true)  # Enable _process callback to update position
 	if body.name == "Mushroom":
-		
 		body.queue_free()
+	
+	theBody = body.name
+
 	pass # Replace with function body.
 		
 func _process(delta):
+
+		
 	if player:
 		is_attacking = sword_anim.get_current_animation() == "swing"
 		#print(is_attacking)
