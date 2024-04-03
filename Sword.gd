@@ -22,7 +22,6 @@ func _on_area_2d_body_entered(body):
 		
 func _process(delta):
 
-		
 	if player:
 		is_attacking = sword_anim.get_current_animation() == "swing"
 		#print(is_attacking)

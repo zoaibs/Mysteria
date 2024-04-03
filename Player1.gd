@@ -10,6 +10,7 @@ const JUMP_VELOCITY = -550.0
 @onready var lives_text = $LivesText
 @onready var score_text = $ScoreText
 @onready var camera = $Camera2D
+@onready var damageSFX = $"../SFX/damageSFX"
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -44,7 +45,7 @@ func _physics_process(delta):
 		lives_text.visible = false
 		camera.enabled = false
 		bossHP.visible = false
-	score_text.text = "Score: " + str(score) 
+	score_text.text = "Score: " + str(Game.score) 
 	if Game.Hslider==0:
 		lives_text.text = "Lives: Infinite"
 	else:
@@ -158,6 +159,7 @@ func set_respawn_position(pos: Vector2):
 
 # Example of how to respawn the player
 func respawn_player():
+	damageSFX.play()
 	add_score(-3)
 	lives = Game.lives
 	global_position = respawn_position
@@ -167,6 +169,7 @@ func respawn_player():
 func take_damage():
 	
 	lives = lives - 1
+	damageSFX.play()
 	if lives == 0:
 		respawn_player()
 		
