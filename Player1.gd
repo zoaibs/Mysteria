@@ -15,7 +15,7 @@ var sword_offset = Vector2(-30, -10)  # Offset for positioning the sword below t
 var respawn_position = Vector2.ZERO
 var is_climbing = false
 var lives = Game.lives
-
+var numRuns=0
 var picked_sword = false
 
 
@@ -81,17 +81,19 @@ func _physics_process(delta):
 		Endtextbox.hide()
 	
 	#creating boss health bar
-	var numRuns=0
+
 	if numRuns<1:
 		if Game.bossBattle:
 			#await get_tree().create_timer(1.2).timeout
 			bossHP.visible=true
 			#await get_tree().create_timer(.8).timeout
-			while bossHP.value<120:
-				bossHP.value+=1
+			while Game.bossHP<120:
+				#bossHP.value+=1
+				Game.bossHP+=1
 				#await get_tree().create_timer(1).timeout
 			#await get_tree().create_timer(6).timeout
 			numRuns+=2
+	$bossHP.value=Game.bossHP
 
 		#Game.bossBattle=false
 	
