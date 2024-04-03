@@ -159,7 +159,7 @@ func take_damage():
 	lives = lives - 1
 	if lives == 0:
 		respawn_player()
-		add_score(-1)
+		add_score(-3)
 
 func add_score(points):
 	score = score + points
