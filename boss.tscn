@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://by5pkgkxjk1lh"]
+[gd_scene load_steps=9 format=3 uid="uid://duvk3w8gkauii"]
 
 [ext_resource type="PackedScene" uid="uid://bdeudnqonw7x4" path="res://Player1.tscn" id="1_vgavt"]
 [ext_resource type="PackedScene" uid="uid://c1n6o4tf4lch0" path="res://textbox.tscn" id="2_411nj"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c3x6jpenqmiq7" path="res://obstacles.tscn" id="3_psljx"]
 [ext_resource type="PackedScene" uid="uid://bsm14j84s7cui" path="res://ladders.tscn" id="4_h4465"]
 [ext_resource type="PackedScene" uid="uid://dst1n4hu58cpq" path="res://wizard.tscn" id="7_oox7x"]
-[ext_resource type="PackedScene" uid="uid://ffigegvtwllk" path="res://fire.tscn" id="8_pdsov"]
+[ext_resource type="PackedScene" path="res://fire.tscn" id="8_pdsov"]
 
 [node name="Node2D" type="Node2D"]
 

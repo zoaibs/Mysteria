@@ -19,6 +19,7 @@ script = ExtResource("1_coiud")
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]
 visible = false
+z_index = 20
 offset_left = 274.0
 offset_top = 770.0
 offset_right = 974.0
@@ -52,6 +53,7 @@ theme_override_font_sizes/font_size = 48
 text = ">"
 
 [node name="Label" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+z_index = 20
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -77,7 +79,7 @@ position = Vector2(612.5, 714)
 shape = SubResource("RectangleShape2D_vq5ln")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 5
+z_index = 2
 position = Vector2(612, 698)
 scale = Vector2(3, 3)
 texture = ExtResource("2_2oxp5")
