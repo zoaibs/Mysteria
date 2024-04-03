@@ -131,7 +131,7 @@ _data = {
 size = Vector2(97.5, 107)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ekwf"]
-size = Vector2(416.228, 385.98)
+size = Vector2(416.228, 770.19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4p5w0"]
 size = Vector2(88, 66)
@@ -159,7 +159,7 @@ shape = SubResource("RectangleShape2D_07r2k")
 [node name="PlayerDetectArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectArea"]
-position = Vector2(0, 9.53674e-07)
+position = Vector2(0, -54.25)
 scale = Vector2(1.34685, -0.282398)
 shape = SubResource("RectangleShape2D_7ekwf")
 
