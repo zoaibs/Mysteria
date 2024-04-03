@@ -29,17 +29,17 @@ func _physics_process(delta):
 
 func _process(delta):
 		if Game.bossHP<20:
-			$".".position.x=90
+			$".".position.x=78
 		elif Game.bossHP<40:
-			$".".position.x=1200
+			$".".position.x=1186
 		elif Game.bossHP<60:
-			$".".position.x=90
+			$".".position.x=78
 		elif Game.bossHP<80:
-			$".".position.x=1200
+			$".".position.x=1186
 		elif Game.bossHP<100:
-			$".".position.x=90
+			$".".position.x=78
 		elif Game.bossHP == 120:
-			$".".position.x=1200
+			$".".position.x=1186
 			
 
 

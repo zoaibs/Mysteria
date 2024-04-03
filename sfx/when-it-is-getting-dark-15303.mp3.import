@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://cni3shd6vwri5"
+uid="uid://34w0gykqgnn0"
 path="res://.godot/imported/when-it-is-getting-dark-15303.mp3-9fd715cb0d6d29e1b354e1801e2f09fe.mp3str"
 
 [deps]
@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/when-it-is-getting-dark-15303.mp3-9fd715cb0d6
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dwstuniutg6ah" path="res://troll.tscn" id="13_d4lfl"]
 [ext_resource type="AudioStream" uid="uid://cacsjttr66fe2" path="res://Music/Undertale OST - Finale (Build Up Loop Ver.) Extended.mp3" id="14_hsvmk"]
 [ext_resource type="PackedScene" uid="uid://cdud7ifyuyair" path="res://new_sign.tscn" id="16_qiolt"]
-[ext_resource type="PackedScene" uid="uid://dh0oc3skj8sy6" path="res://door.tscn" id="17_rgu0s"]
+[ext_resource type="PackedScene" path="res://door.tscn" id="17_rgu0s"]
 [ext_resource type="AudioStream" uid="uid://dhdtbar1rsdj5" path="res://sfx/jump.wav" id="18_iubxc"]
 [ext_resource type="AudioStream" uid="uid://b5gqvwg53k7do" path="res://sfx/swordswing.wav" id="19_q00tr"]
 [ext_resource type="AudioStream" uid="uid://bbt25mq337utl" path="res://sfx/monster_death.wav" id="20_2h7wq"]
