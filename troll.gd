@@ -5,7 +5,8 @@ var attack_check: Area2D
 @onready var anim = $AnimationPlayer2
 @onready var death_sfx = $"../../SFX/deathSFX"
 
-var speed = 100
+var speed = 150
+var hp = 2
 var player_detected = false
 @onready var player: CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -40,9 +41,11 @@ func _physics_process(delta):
 	if attack_check:
 		if attack_check.name == "SwordArea":
 			if attack_check.get_parent().is_attack():
-				player.add_score(10)
-				death_sfx.play()
-				get_parent().remove_child(self)
+				hp-=1
+				if hp==0:
+					player.add_score(10)
+					death_sfx.play()
+					get_parent().remove_child(self)
 		
 
 

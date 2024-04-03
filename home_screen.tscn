@@ -112,7 +112,7 @@ sources/1 = SubResource("TileSetAtlasSource_rj5j8")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbxt7"]
 
-[node name="Node2D2" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 script = ExtResource("1_npf7c")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
