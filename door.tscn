@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh0oc3skj8sy6"]
+
+[ext_resource type="Texture2D" uid="uid://ewc2vdeq42ik" path="res://Enchanted Forest - Individual Frames/pixel_art_door.png" id="1_n7mta"]
+[ext_resource type="Script" path="res://door.gd" id="1_u8vmd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6lrk"]
+size = Vector2(242, 427)
+
+[node name="Door" type="Node2D"]
+script = ExtResource("1_u8vmd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_n7mta")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, 3.5)
+shape = SubResource("RectangleShape2D_d6lrk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
