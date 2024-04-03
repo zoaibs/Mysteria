@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 
 var check: Area2D
+@onready var anim = $AnimationPlayer2
+
 
 
 func _on_area_2d_area_entered(area):
@@ -18,7 +20,7 @@ func _on_area_2d_area_entered(area):
 
 
 func _physics_process(delta):
-	
+	anim.play("idle")
 	if check:
 		if check.name == "SwordArea":
 			if check.get_parent().is_attack():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://chlgaovsd0hvn"]
+[gd_scene load_steps=16 format=3 uid="uid://chlgaovsd0hvn"]
 
 [ext_resource type="Script" path="res://mushroom.gd" id="1_3vpvw"]
 [ext_resource type="Texture2D" uid="uid://doxdjv7n2wx2n" path="res://Enchanted Forest - Individual Frames/Enchanted Forest - Individual Frames/Mushroom - Small/SmallMushroom_Idle_1.png" id="1_6gowj"]
@@ -27,7 +27,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -44,7 +44,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwqyo"]
@@ -53,12 +53,54 @@ size = Vector2(57, 57)
 [sub_resource type="Animation" id="Animation_jkiqd"]
 resource_name = "idle"
 length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
 
 [sub_resource type="Animation" id="Animation_6gr8m"]
 resource_name = "walk"
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_r8n7l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8ildo"]
 _data = {
+"RESET": SubResource("Animation_r8n7l"),
 "idle": SubResource("Animation_jkiqd"),
 "walk": SubResource("Animation_6gr8m")
 }
@@ -71,6 +113,7 @@ position = Vector2(0, -30)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_yqdor")
 animation = &"idle"
+frame = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -79,7 +122,6 @@ position = Vector2(-0.5, 5.5)
 shape = SubResource("RectangleShape2D_uwqyo")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
-root_node = NodePath("")
 libraries = {
 "": SubResource("AnimationLibrary_8ildo")
 }
