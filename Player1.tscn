@@ -226,6 +226,7 @@ libraries = {
 one_shot = true
 
 [node name="LivesText" type="RichTextLabel" parent="."]
+z_index = 100
 offset_left = -575.0
 offset_top = -348.0
 offset_right = -195.0
@@ -235,6 +236,7 @@ theme_override_font_sizes/normal_font_size = 64
 text = "Lives: 3"
 
 [node name="ScoreText" type="RichTextLabel" parent="."]
+z_index = 100
 offset_left = -573.0
 offset_top = -288.0
 offset_right = -193.0
