@@ -174,5 +174,7 @@ func take_damage():
 func add_score(points):
 	
 	score = score + points* Game.Hslider
-	Game.score = score
+	Game.score = max(score, 0)
 
+func get_sword():
+	return sword
