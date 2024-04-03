@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ffigegvtwllk"]
+[gd_scene load_steps=22 format=3 uid="uid://ffigegvtwllk"]
 
 [ext_resource type="Script" path="res://fire.gd" id="1_2ldwc"]
 [ext_resource type="Texture2D" uid="uid://cbmnc8jawfalh" path="res://pack_effect_fire_column/pack_effect_fire_column/fire_column_medium/fire_column_medium_1.png" id="1_rcesw"]
@@ -107,7 +107,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_81qcs"]
 resource_name = "fire_moving"
 length = 2.2
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -132,17 +131,21 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1)
 }
 
+[sub_resource type="Animation" id="Animation_adgux"]
+resource_name = "no_fire"
+length = 2.2
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_711wd"]
 _data = {
 "RESET": SubResource("Animation_pfvh5"),
-"fire_moving": SubResource("Animation_81qcs")
+"fire_moving": SubResource("Animation_81qcs"),
+"no_fire": SubResource("Animation_adgux")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6tmp"]
 size = Vector2(22, 104)
 
 [node name="Node2D" type="Node2D"]
-visible = false
 script = ExtResource("1_2ldwc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -164,4 +167,5 @@ libraries = {
 position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_h6tmp")
 
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

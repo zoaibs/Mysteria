@@ -52,21 +52,27 @@ position = Vector2(511, 411)
 position = Vector2(791, 411)
 
 [node name="fire3" parent="." instance=ExtResource("8_pdsov")]
+visible = false
 position = Vector2(653, 411)
 
 [node name="fire4" parent="." instance=ExtResource("8_pdsov")]
+visible = false
 position = Vector2(622, 219)
 
 [node name="fire5" parent="." instance=ExtResource("8_pdsov")]
+visible = false
 position = Vector2(11, 409)
 
 [node name="fire6" parent="." instance=ExtResource("8_pdsov")]
+visible = false
 position = Vector2(162, 412)
 
 [node name="fire7" parent="." instance=ExtResource("8_pdsov")]
+visible = false
 position = Vector2(1135, 413)
 
 [node name="fire8" parent="." instance=ExtResource("8_pdsov")]
+visible = false
 position = Vector2(1277, 413)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
