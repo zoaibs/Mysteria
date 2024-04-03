@@ -147,7 +147,9 @@ func set_respawn_position(pos: Vector2):
 func respawn_player():
 	lives = Game.lives
 	global_position = respawn_position
-	
+	if Game.bossBattle:
+		Game.bossHP=120
+		Game.respawned=true
 func take_damage():
 	
 	lives = lives - 1
