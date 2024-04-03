@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c85c1csnelkcn"]
+[gd_scene load_steps=4 format=3 uid="uid://c85c1csnelkcn"]
 
 [ext_resource type="PackedScene" uid="uid://cixobghs4jhvq" path="res://tilemap.tscn" id="1_2ems2"]
 [ext_resource type="PackedScene" uid="uid://bdeudnqonw7x4" path="res://Player1.tscn" id="2_olega"]
+[ext_resource type="FontFile" uid="uid://cxhawnnon7lsg" path="res://Alkhemikal.ttf" id="3_7aa66"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,3 +11,23 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_olega")]
 position = Vector2(629, 590)
+
+[node name="YouSavedMysteria" type="RichTextLabel" parent="."]
+z_index = 12
+offset_left = 254.0
+offset_top = 121.0
+offset_right = 1085.0
+offset_bottom = 244.0
+theme_override_fonts/normal_font = ExtResource("3_7aa66")
+theme_override_font_sizes/normal_font_size = 96
+text = "You saved Mysteria!"
+
+[node name="ScoreText" type="RichTextLabel" parent="."]
+z_index = 12
+offset_left = 379.0
+offset_top = 264.0
+offset_right = 802.0
+offset_bottom = 387.0
+theme_override_fonts/normal_font = ExtResource("3_7aa66")
+theme_override_font_sizes/normal_font_size = 96
+text = "Your score:"

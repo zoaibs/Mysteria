@@ -36,7 +36,7 @@ var Endtextbox_visible = false
 var direction = 0  # Define direction as a class member variable
 
 func _physics_process(delta):
-	if get_tree().current_scene = "end_screen":
+	if get_tree().current_scene.name == "end_screen":
 		print("Player finished the game!")
 		score_text.visible = false
 		lives_text.visible = false
