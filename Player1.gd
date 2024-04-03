@@ -172,6 +172,7 @@ func take_damage():
 		
 
 func add_score(points):
-	score = score + points
+	
+	score = score + points* Game.Hslider
 	Game.score = score
 

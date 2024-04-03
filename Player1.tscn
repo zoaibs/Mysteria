@@ -256,4 +256,17 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 max_value = 120.0
 step = 1.0
 
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = -104.0
+offset_top = -244.0
+offset_right = 597.0
+offset_bottom = -166.0
+max_value = 120.0
+step = 20.0
+value = 80.0
+tint_under = Color(0, 0, 0, 1)
+tint_over = Color(0, 0, 0, 1)
+tint_progress = Color(0, 0, 0, 1)
+
 [connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]

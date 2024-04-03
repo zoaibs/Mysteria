@@ -19,7 +19,7 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_area_2d_2_body_entered(body):
-	if body.name == "Player" and $".".visible==true:
+	if body.name == "Player" and $".".visible==true and Game.bossBattle:
 		body.take_damage()
 
 func _on_area_2d_2_area_entered(area):
