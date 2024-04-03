@@ -40,7 +40,7 @@ func _physics_process(delta):
 		print("Player finished the game!")
 		score_text.visible = false
 		lives_text.visible = false
-	score_text.text = "Score: " + str(score)
+	score_text.text = "Score: " + str(score) 
 	if Game.Hslider==0:
 		lives_text.text = "Lives: Infinite"
 	else:
