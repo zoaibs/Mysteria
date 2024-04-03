@@ -202,7 +202,7 @@ shape = SubResource("CapsuleShape2D_n7svf")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(6, -2)
 sprite_frames = SubResource("SpriteFrames_8urlt")
-animation = &"swing"
+animation = &"walk"
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
