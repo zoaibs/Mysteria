@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://duvk3w8gkauii"]
+[gd_scene load_steps=10 format=3 uid="uid://by5pkgkxjk1lh"]
 
 [ext_resource type="PackedScene" uid="uid://bdeudnqonw7x4" path="res://Player1.tscn" id="1_vgavt"]
 [ext_resource type="PackedScene" uid="uid://c1n6o4tf4lch0" path="res://textbox.tscn" id="2_411nj"]
@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c3x6jpenqmiq7" path="res://obstacles.tscn" id="3_psljx"]
 [ext_resource type="PackedScene" uid="uid://bsm14j84s7cui" path="res://ladders.tscn" id="4_h4465"]
 [ext_resource type="PackedScene" uid="uid://dst1n4hu58cpq" path="res://wizard.tscn" id="7_oox7x"]
-[ext_resource type="PackedScene" path="res://fire.tscn" id="8_pdsov"]
+[ext_resource type="PackedScene" uid="uid://ffigegvtwllk" path="res://fire.tscn" id="8_pdsov"]
+[ext_resource type="AudioStream" uid="uid://cni3shd6vwri5" path="res://sfx/when-it-is-getting-dark-15303.mp3" id="9_ofaos"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -63,3 +64,7 @@ position = Vector2(1106, 411)
 
 [node name="Node2D8" parent="." instance=ExtResource("8_pdsov")]
 position = Vector2(1277, 413)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ofaos")
+volume_db = 24.0
