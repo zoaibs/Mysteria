@@ -24,6 +24,7 @@ Utils="*res://global/utils.gd"
 
 window/size/viewport_width=1248
 window/size/viewport_height=768
+window/size/resizable=false
 
 [input]
 
