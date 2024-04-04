@@ -21,7 +21,7 @@ var is_climbing = false
 var lives = Game.lives
 var numRuns=0
 var picked_sword = false
-var score = 0
+#var score = 0
 
 @onready var jump_sfx = $"../SFX/jumpSFX"
 
@@ -52,7 +52,7 @@ func _physics_process(delta):
 		lives_text.text = "Lives: " + str(lives)
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		if collision.get_collider().name == "obstacles":
+		if collision.get_collider().name == "obstacles" and Game.bossHP > 0 and Game.Hslider > 0:
 			respawn_player()
 		if Input.is_action_pressed("climb"):
 			if collision.get_collider().name == "ladders":
@@ -108,7 +108,7 @@ func _physics_process(delta):
 		$CoyoteTimer.start(coyote_time)
 		
 	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and can_jump and can_move:
+	if Input.is_action_just_pressed("ui_accept") and can_jump and can_move and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		anim.play("jump")
 		jump_sfx.play()
@@ -159,6 +159,7 @@ func set_respawn_position(pos: Vector2):
 
 # Example of how to respawn the player
 func respawn_player():
+	print("Reoawn score" + str(Game.score))
 	damageSFX.play()
 	add_score(-3)
 	lives = Game.lives
@@ -166,6 +167,7 @@ func respawn_player():
 	if Game.bossBattle:
 		Game.bossHP=120
 		Game.respawned=true
+		#Game.score = score
 func take_damage():
 	
 	lives = lives - 1
@@ -176,8 +178,10 @@ func take_damage():
 
 func add_score(points):
 	
-	score = score + points* Game.Hslider
-	Game.score = max(score, 0)
+	#score = score + points * Game.Hslider
+	Game.score += points*Game.Hslider
+	Game.score = max(0, Game.score)
+	print(Game.score)
 
 func get_sword():
 	return sword

@@ -40,7 +40,7 @@ func _physics_process(delta):
 				check = null
 
 func _process(delta):
-	print($".".position.x,", ", $".".position.y)
+	print("Score" + str(Game.score))
 	if second_interaction_happened:
 		if Game.bossHP<=20:
 			$".".position.x=78

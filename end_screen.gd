@@ -15,4 +15,5 @@ func _process(delta):
 
 func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://home_screen.tscn")
+	Game.bossBattle = false
 	pass # Replace with function body.
