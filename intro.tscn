@@ -172,11 +172,6 @@ z_index = 4
 position = Vector2(3174, 271)
 scale = Vector2(3, 3)
 
-[node name="Sword2" parent="." instance=ExtResource("9_6cj6a")]
-z_index = 4
-position = Vector2(707, -2295)
-scale = Vector2(3, 3)
-
 [node name="Tilemaps" type="Node2D" parent="."]
 scale = Vector2(6, 6)
 
