@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://options.gd" id="1_rlg63"]
 [ext_resource type="Texture2D" uid="uid://b72ijkf6nrkyl" path="res://cavesofgallet_tiles.png" id="3_moa1c"]
 [ext_resource type="PackedScene" uid="uid://cixobghs4jhvq" path="res://tilemap.tscn" id="4_qcw83"]
-[ext_resource type="AudioStream" uid="uid://21uejgq2c8b4" path="res://Music/Undertale OST_ 006 - Uwa!! So Temperate.mp3" id="5_ndfjd"]
+[ext_resource type="AudioStream" uid="uid://cl6a5i38lfali" path="res://2019-12-09_-_Retro_Forest_-_David_Fesliyan.mp3" id="5_3fwfr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rj5j8"]
 texture = ExtResource("3_moa1c")
@@ -216,7 +216,7 @@ button_pressed = true
 text = "ON"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_ndfjd")
+stream = ExtResource("5_3fwfr")
 autoplay = true
 
 [connection signal="drag_ended" from="HSlider" to="." method="_on_h_slider_drag_ended"]
